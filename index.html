@@ -1,0 +1,149 @@
+<!-- Author: Keith Smith -->
+<!-- Date: 20 September 2018 -->
+<!-- Class: CSIS 1570 -->
+<!-- Assignment: #4 -->
+<!doctype html>
+<html>
+<head>
+  <title>Assignment #4</title>
+  <!-- Define character set as utf-8 -->
+  <meta charset='utf-8' />
+  <!-- Custom fonts to use -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:600|Roboto+Slab" rel="stylesheet">
+  <!-- Document styling -->
+  <style>
+    body {
+      margin: 0 auto;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    div {
+      margin: 0 auto;
+      padding: 0;
+      width: 550px;
+    }
+    h2 {
+      margin: 0 auto;
+      padding: 13px 0 0 0;
+      font-size: 2.5em;
+    }
+    h3 {
+      margin: 0 auto;
+      padding: 0 0 8px 0;
+      font-size: 2.0em;
+    }
+    h4 {
+      margin: 0 auto;
+      padding: 0 0 14px 0;
+      font-size: 1.1em;
+    }
+    p {
+      font-family: 'Roboto Slab', serif;
+      text-align: left;
+      text-indent: 25px;
+    }
+    section {
+      width: 100vw;
+      text-align: center;
+    }
+    select {
+      width: 200px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding: 10px;
+      border-radius: 0;
+      border: 2px solid black;
+      font-size: 0.8em;
+      font-weight: Bold;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    select:focus {
+      outline: none;
+    }
+    select::selection {
+      width: 200px;
+    }
+    #first-paragraph {
+      text-indent: 0;
+    }
+    #first-paragraph::first-letter {
+      float: left;
+      font-size: 2.8em;
+      margin: 0 auto;
+      margin-right: 7px;
+      padding-left: 10px;
+      padding-right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <div>
+      <!-- Headers to describe document's purpose -->
+      <h2>CSIS 1570</h2>
+      <h3>Assignment #4</h3>
+      <h4>Keith Smith</h4>
+      <!-- This menu drives the javascript to change page style options -->
+      <select id='select-menu'>
+        <option value='option-default' class='option-selection'>Color</option>
+        <option value='option-red' class='option-selection'>Red</option>
+        <option value='option-green' class='option-selection'>Green</option>
+        <option value='option-blue' class='option-selection'>Blue</option>
+      </select>
+      <!-- Filler text goes here -->
+      <p data-content='black' id='first-paragraph'>
+        A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.
+      </p>
+      <p>
+        I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.
+      </p>
+      <p>
+        When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own image.
+      </p>
+    </div>
+  </section>
+  <!-- Script to change style elements of the document go here -->
+  <script>
+    document.getElementById('select-menu').onchange = function() {
+      switch(this.options[this.selectedIndex].value) {
+        case 'option-default':
+          document.getElementsByTagName('SELECT')[0].style.borderColor = 'black';
+          document.getElementsByTagName('SELECT')[0].style.backgroundColor = 'white';
+          document.getElementsByTagName('SELECT')[0].style.color = 'black';
+          document.body.style.backgroundColor = 'white';
+          document.body.style.color = 'black';
+          break;
+        case 'option-red':
+          document.querySelector('#first-paragraph').setAttribute('data-content', 'black');
+          // first_letter.style.color = 'black';
+          document.getElementsByTagName('SELECT')[0].style.borderColor = 'white';
+          document.getElementsByTagName('SELECT')[0].style.backgroundColor = 'red';
+          document.getElementsByTagName('SELECT')[0].style.color = 'white';
+          document.body.style.backgroundColor = 'red';
+          document.body.style.color = 'white';
+          break;
+        case 'option-green':
+          document.getElementsByTagName('SELECT')[0].style.borderColor = 'white';
+          document.getElementsByTagName('SELECT')[0].style.backgroundColor = 'green';
+          document.getElementsByTagName('SELECT')[0].style.color = 'white';
+          document.body.style.backgroundColor = 'green';
+          document.body.style.color = 'white';
+          break;
+        case 'option-blue':
+          document.getElementsByTagName('SELECT')[0].style.borderColor = 'white';
+          document.getElementsByTagName('SELECT')[0].style.backgroundColor = 'blue';
+          document.getElementsByTagName('SELECT')[0].style.color = 'white';
+          document.body.style.backgroundColor = 'blue';
+          document.body.style.color = 'white';
+          break;
+        default:
+          console.log('error with menu selection');
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
